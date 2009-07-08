@@ -1,3 +1,8 @@
+# NOTE:
+# - see "URL:" for download links
+# - if you want to build 32-bit version, you don't have to download Source1.
+#   Just comment it out.
+# - if you want to build 64-bit version, comment out Source0
 
 %define         major   11.1
 %define         minor   0.7
