@@ -3,6 +3,7 @@
 # - if you want to build 32-bit version, you don't have to download Source1.
 #   Just comment it out.
 # - if you want to build 64-bit version, comment out Source0
+# - it requires libraries provided by oracle-instantclient-basic
 
 %define		i386rel		0.1
 %define		x8664rel	0.0.2-1
