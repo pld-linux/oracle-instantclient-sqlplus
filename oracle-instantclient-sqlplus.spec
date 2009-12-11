@@ -4,28 +4,27 @@
 #   Just comment it out.
 # - if you want to build 64-bit version, comment out Source0
 
-%define         major   11.1
-%define         minor   0.7
-%define         rel     0
+%define		i386rel		0.1
+%define		x8664rel	0.0.2-1
 
 Summary:	Oracle database client
 Summary(pl.UTF-8):	Klient bazy danych Oracle
 Name:		oracle-instantclient-sqlplus
-Version:	%{major}.%{minor}.%{rel}
+Version:	11.2
 Release:	0.1
 License:	OTN (proprietary, non-distributable)
 Group:		Applications
-Source0:	instantclient-sqlplus-linux32-%{major}.%{minor}.zip
-# NoSource0-md5:	b911354a45b110d78d3691460c2bc491
-Source1:	sqlplus-%{version}-linux-x86_64.zip
-# NoSource1-md5:	ec20fe7fdb0a8fddd8a737b1ea9422f4
+Source0:	instantclient-sqlplus-linux32-%{version}.%{i386rel}.zip
+# NoSource0-md5:	94a004ee4f58149e62ed76107217d7c8
+Source1:	oracle-instantclient%{version}-sqlplus-%{version}.%{x8664rel}.x86_64.zip
+# NoSource1-md5:	d1b8d4afe383ec2b03cca155be0fe88f
 NoSource:	0
 NoSource:	1
 URL:		http://www.oracle.com/technology/software/tech/oci/instantclient/index.html
 ExclusiveArch:	%{ix86} %{x8664}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		srcdir	instantclient_%(echo %{major} | tr . _)
+%define		srcdir	instantclient_%(echo %{version} | tr . _)
 
 %description
 Oracle database client.
@@ -46,9 +45,9 @@ Klient bazy danych Oracle.
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir},%{_datadir}/sqlplus}
 
-install %{srcdir}/libsqlplusic.so $RPM_BUILD_ROOT%{_libdir}/libsqlplusic.so
-install %{srcdir}/libsqlplus.so $RPM_BUILD_ROOT%{_libdir}/libsqlplus.so
-install %{srcdir}/sqlplus $RPM_BUILD_ROOT%{_bindir}/sqlplus
+install -p %{srcdir}/libsqlplusic.so $RPM_BUILD_ROOT%{_libdir}/libsqlplusic.so
+install -p %{srcdir}/libsqlplus.so $RPM_BUILD_ROOT%{_libdir}/libsqlplus.so
+install -p %{srcdir}/sqlplus $RPM_BUILD_ROOT%{_bindir}/sqlplus
 
 %clean
 rm -rf $RPM_BUILD_ROOT
