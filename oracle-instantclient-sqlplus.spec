@@ -6,7 +6,7 @@
 # - it requires libraries provided by oracle-instantclient-basic
 
 %define		i386rel		0.1
-%define		x8664rel	0.0.2-1
+%define		x8664rel	0.1.0-1
 
 Summary:	Oracle Database Client - SQL*Plus
 Summary(pl.UTF-8):	Klient bazy danych Oracle
@@ -18,7 +18,7 @@ Group:		Applications
 Source0:	instantclient-sqlplus-linux32-%{version}.%{i386rel}.zip
 # NoSource0-md5:	94a004ee4f58149e62ed76107217d7c8
 Source1:	oracle-instantclient%{version}-sqlplus-%{version}.%{x8664rel}.x86_64.zip
-# NoSource1-md5:	d1b8d4afe383ec2b03cca155be0fe88f
+# NoSource1-md5:	1fdc0c3544194de35d2aabe9e6b3faf5
 NoSource:	0
 NoSource:	1
 URL:		http://www.oracle.com/technology/software/tech/oci/instantclient/index.html
