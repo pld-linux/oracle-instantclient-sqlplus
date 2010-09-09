@@ -8,7 +8,7 @@
 %define		i386rel		0.1
 %define		x8664rel	0.0.2-1
 
-Summary:	Oracle database client
+Summary:	Oracle Database Client - SQL*Plus
 Summary(pl.UTF-8):	Klient bazy danych Oracle
 Name:		oracle-instantclient-sqlplus
 Version:	11.2
@@ -29,7 +29,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		srcdir	instantclient_%(echo %{version} | tr . _)
 
 %description
-Oracle database client.
+Oracle Database Instant Client Package - SQL*Plus.
+Additional libraries and executable for running SQL*Plus
+with Instant Client.
 
 %description -l pl.UTF-8
 Klient bazy danych Oracle.
